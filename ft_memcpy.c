@@ -6,7 +6,7 @@
 /*   By: sreerink <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/13 18:50:41 by sreerink      #+#    #+#                 */
-/*   Updated: 2022/11/04 18:22:19 by sreerink      ########   odam.nl         */
+/*   Updated: 2022/11/05 16:09:36 by sreerink      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 /*
@@ -15,7 +15,7 @@
 */
 #include	"libft.h"
 
-void	*ft_memcpy(void *restrict dst, const void *restrict src, size_t n)
+void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
 	char			*src_caster;
 	char			*dst_caster;

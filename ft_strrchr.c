@@ -6,7 +6,7 @@
 /*   By: sreerink <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/11/04 19:11:28 by sreerink      #+#    #+#                 */
-/*   Updated: 2022/11/04 19:24:02 by sreerink      ########   odam.nl         */
+/*   Updated: 2022/11/05 17:14:26 by sreerink      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 /*
@@ -20,14 +20,18 @@ char	*ft_strrchr(const char *s, int c)
 	char			ch;
 	char			*str;
 	char			*save_ch;
-	unsigned long	i;
+	size_t			i;
 
 	ch = (unsigned char) c;
 	str = (char *) s;
 	i = 0;
 	save_ch = 0;
-	if (ch == '\0')
-		return (ft_strchr(str, '\0'));
+	while (ch == '\0')
+	{
+		if (str[i] == ch)
+			return (str +i);
+		i++;
+	}
 	while (str[i] != '\0')
 	{
 		if (str[i] == ch)
@@ -35,13 +39,13 @@ char	*ft_strrchr(const char *s, int c)
 		i++;
 	}
 	return (save_ch);
-}
-/*
+}/*
+
 int	main(void)
 {
 	char	str1[] = "lahho!";
 	char	str2[] = "lahho!";
 
-	printf("OG: %s\n", strrchr(str1, 'l'));
-	printf("DIY: %s\n", ft_strrchr(str2, 'l'));
+	printf("OG: %s\n", strrchr(str1, '\0'));
+	printf("DIY: %s\n", ft_strrchr(str2, '\0'));
 }*/
