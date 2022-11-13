@@ -6,7 +6,7 @@
 /*   By: sreerink <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/11/10 20:12:42 by sreerink      #+#    #+#                 */
-/*   Updated: 2022/11/12 20:13:12 by sreerink      ########   odam.nl         */
+/*   Updated: 2022/11/13 21:03:31 by sreerink      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define LIBFT_H
 
 # include	<stddef.h>
+# include	<stdlib.h>
 
 int		ft_isalpha(int c);
 
@@ -52,5 +53,11 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size);
 int		ft_memcmp(const void *s1, const void *s2, size_t n);
 
 int		ft_atoi(const char *str);
+
+void	*ft_calloc(size_t count, size_t size);
+
+char	*ft_strdup(const char *s1);
+
+char	*ft_strdup(const char *s1);
 
 #endif
