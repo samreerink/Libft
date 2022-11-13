@@ -1,32 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_memchr.c                                        :+:    :+:            */
+/*   ft_memcmp.c                                        :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sreerink <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/10/28 22:10:24 by sreerink      #+#    #+#                 */
-/*   Updated: 2022/11/12 20:02:06 by sreerink      ########   odam.nl         */
+/*   Created: 2022/11/10 20:19:35 by sreerink      #+#    #+#                 */
+/*   Updated: 2022/11/12 20:56:04 by sreerink      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-//#include	<string.h>
 //#include	<stdio.h>
+//#include	<string.h>
 #include	"libft.h"
 
-void	*ft_memchr(const void *s, int c, size_t n)
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
 	size_t			i;
-	unsigned char	*str;
-	unsigned char	ch;
+	unsigned char	*caster_s1;
+	unsigned char	*caster_s2;
 
+	caster_s1 = (unsigned char *) s1;
+	caster_s2 = (unsigned char *) s2;
 	i = 0;
-	str = (unsigned char *) s;
-	ch = (unsigned char) c;
+	if (n == 0)
+		return (0);
 	while (i < n)
 	{
-		if (str[i] == ch)
-			return (str + i);
+		if (caster_s1[i] != caster_s2[i])
+			return (caster_s1[i] - caster_s2[i]);
 		i++;
 	}
 	return (0);
@@ -34,8 +36,9 @@ void	*ft_memchr(const void *s, int c, size_t n)
 /*
 int	main(void)
 {
-	unsigned char	str1[] = "Hello!";
-	
-	printf("OG: %s\n", memchr(str1, 'l', 4));
-	printf("DIY: %s\n", ft_memchr(str1, 'l', 4));
+	unsigned char	s1[] = "\0";
+	unsigned char	s2[] = "\0";
+
+	printf("OG: %d\n", memcmp(s1, s2, 1));
+	printf("DIY: %d\n", ft_memcmp(s1, s2, 1));
 }*/

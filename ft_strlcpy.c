@@ -1,41 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_memchr.c                                        :+:    :+:            */
+/*   ft_strlcpy.c                                       :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sreerink <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/10/28 22:10:24 by sreerink      #+#    #+#                 */
-/*   Updated: 2022/11/12 20:02:06 by sreerink      ########   odam.nl         */
+/*   Created: 2022/11/10 14:22:30 by sreerink      #+#    #+#                 */
+/*   Updated: 2022/11/10 18:32:05 by sreerink      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-//#include	<string.h>
 //#include	<stdio.h>
+//#include	<string.h>
 #include	"libft.h"
 
-void	*ft_memchr(const void *s, int c, size_t n)
+size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {
-	size_t			i;
-	unsigned char	*str;
-	unsigned char	ch;
+	size_t	i;
 
 	i = 0;
-	str = (unsigned char *) s;
-	ch = (unsigned char) c;
-	while (i < n)
+	if (size == 0)
+		return (ft_strlen(src));
+	while (src[i] != '\0' && i < (size - 1))
 	{
-		if (str[i] == ch)
-			return (str + i);
+		dst[i] = src[i];
 		i++;
 	}
-	return (0);
+	dst[i] = '\0';
+	return (ft_strlen(src));
 }
 /*
 int	main(void)
 {
-	unsigned char	str1[] = "Hello!";
-	
-	printf("OG: %s\n", memchr(str1, 'l', 4));
-	printf("DIY: %s\n", ft_memchr(str1, 'l', 4));
+	char	src1[] = "Hallo";
+	char	src2[] = "Hallo";
+	char	dst1[] = "aaaaaaaaaaaa";
+	char	dst2[] = "aaaaaaaaaaaa";
+
+	printf("OG: %lu\n", strlcpy(dst1, src1, 5));
+	printf("%s\n", dst1);
+	printf("DIY: %lu\n", ft_strlcpy(dst2, src2, 5));
+	printf("%s\n", dst2);
 }*/

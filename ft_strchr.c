@@ -6,7 +6,7 @@
 /*   By: sreerink <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/24 18:49:26 by sreerink      #+#    #+#                 */
-/*   Updated: 2022/11/05 17:14:29 by sreerink      ########   odam.nl         */
+/*   Updated: 2022/11/10 20:10:41 by sreerink      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 /*
@@ -27,7 +27,7 @@ char	*ft_strchr(const char *s, int c)
 	while (ch == '\0')
 	{
 		if (str[i] == ch)
-			return (str +i);
+			return (str + i);
 		i++;
 	}
 	while (str[i] != '\0')
@@ -37,8 +37,8 @@ char	*ft_strchr(const char *s, int c)
 		i++;
 	}
 	return (0);
-}/*
-
+}
+/*
 int	main(void)
 {
 	char	str1[] = "abc";
