@@ -6,7 +6,7 @@
 /*   By: sreerink <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/11/10 20:12:42 by sreerink      #+#    #+#                 */
-/*   Updated: 2022/11/13 21:03:31 by sreerink      ########   odam.nl         */
+/*   Updated: 2022/11/15 20:40:31 by sreerink      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,5 +69,7 @@ void	ft_putendl_fd(char *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
 
 size_t	ft_strlcat(char *dst, const char *src, size_t size);
+
+char	*ft_substr(char const *s, unsigned int start, size_t len);
 
 #endif
