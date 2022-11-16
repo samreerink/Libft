@@ -9,10 +9,9 @@
 /*   Updated: 2022/11/04 17:38:04 by sreerink      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
-/*
-#include	<string.h>
-#include	<stdio.h>
-*/
+
+//#include	<string.h>
+//#include	<stdio.h>
 #include	"libft.h"
 
 size_t	ft_strlen(const char *s)
@@ -27,7 +26,7 @@ size_t	ft_strlen(const char *s)
 /*
 int	main(void)
 {
-	char	s[20] = "";
+	char	s[] = "";
 
 	printf("DIY: %lu\n", ft_strlen(s));
 	printf("OG: %lu\n", strlen(s));

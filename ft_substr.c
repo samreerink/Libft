@@ -16,33 +16,32 @@
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	size_t	i;
-	size_t	j;
-	size_t	sub_size;
+	size_t	s_len;
 	char	*substr;
 
-	i = start;
-	j = 0;
-	if (!s)
-		substr = (char *)ft_calloc(sizeof(char), 1);
-	else
-	{
-		sub_size = (ft_strlen(s + start)) + 1;
-		substr = (char *)ft_calloc(sizeof(char), sub_size);
-	}
+	s_len = ft_strlen(s);
+	i = 0;
+	if (s == 0)
+		return (0);
+	if (start > s_len)
+		len = 0;
+	else if (s_len < len)
+		len = s_len;
+	substr = (char *)ft_calloc(sizeof(char), (len + 1));
 	if (!substr)
 		return (0);
-	while (s[i] && j < len)
+	while (i < len && start <= s_len)
 	{
-		substr[j] = s[i];
+		substr[i] = s[start];
+		start++;
 		i++;
-		j++;
 	}
 	return (substr);
 }
 /*
 int	main(void)
 {
-	char	str[] = "i just want this part #############";
+	char	str[] = "";
 
 	printf("%s\n", ft_substr(str, 5, 20));
 }*/
