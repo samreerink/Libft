@@ -10,19 +10,20 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include	<stdlib.h>
+#include	"libft.h"
 
 size_t	count_words(char const *s, char c);
-char	**make_words(char **arr, char c);
-void	free_arr(char **arr, size_t arrays);
 
 char	**ft_split(char const *s, char c)
 {
 	char	**arr;
+	size_t	words;
 
-	arr = malloc(sizeof(char *) * (count_words(s, c) + 1));
+	words = count_words(s, c);
+	arr = malloc(sizeof(char *) * (words + 1));
 	if (!arr)
 		return (0);
+	lenght_make_words(s, arr, c, words);
 }
 
 size_t	count_words(char const *s, char c)
@@ -44,7 +45,7 @@ size_t	count_words(char const *s, char c)
 		while (s[j] != c && s[j])
 		{
 			j++;
-			if (s[j] == c && s[j])
+			if (s[j] == c || !s[j])
 			{
 				word++;
 				i = j;
@@ -54,16 +55,14 @@ size_t	count_words(char const *s, char c)
 	return (word);
 }
 
-char	**make_words(char **arr, char *s, )
+size_t	lenght_make_words(char const *s, char **arr, char c, size_t max_words)
 {
 	size_t	i;
 	size_t	j;
-	size_t	a;
 
 	i = 0;
 	j = 0;
-	a = 0;
-	while (s[i])
+	while (s[i] && max_words > 0)
 	{
 		while (s[i] == c && s[i])
 		{
@@ -73,13 +72,23 @@ char	**make_words(char **arr, char *s, )
 		while (s[j] != c && s[j])
 		{
 			j++;
-			if (s[j] == c && s[j])
+			if (s[j] == c || !s[j])
 			{
-				arr[a] = ft_substr(s, i, j - i);
-				a++;
+				make_words(s, arr, i, j);
+				max_words--;
 				i = j;
 			}
 		}
 	}
-	return (arr);
+}
+
+void	make_words(char const *s, char **arr, size_t i, size_t j)
+{
+	size_t	a;
+
+	a = 0;
+	arr[a] = ft_substr(s, i, j - i);
+	if (!arr[a])
+		free_words;
+	a++;
 }
