@@ -13,6 +13,9 @@
 #include	"libft.h"
 
 size_t	count_words(char const *s, char c);
+size_t	lenght_words(char const *s, char **arr, char c, size_t max_words);
+void	make_words(char const *s, char **arr, size_t i, size_t j);
+void	free_words(char **arr, size_t index);
 
 char	**ft_split(char const *s, char c)
 {
@@ -23,7 +26,7 @@ char	**ft_split(char const *s, char c)
 	arr = malloc(sizeof(char *) * (words + 1));
 	if (!arr)
 		return (0);
-	lenght_make_words(s, arr, c, words);
+	lenght_words(s, arr, c, words);
 }
 
 size_t	count_words(char const *s, char c)
@@ -55,7 +58,7 @@ size_t	count_words(char const *s, char c)
 	return (word);
 }
 
-size_t	lenght_make_words(char const *s, char **arr, char c, size_t max_words)
+size_t	lenght_words(char const *s, char **arr, char c, size_t max_words)
 {
 	size_t	i;
 	size_t	j;
@@ -92,3 +95,19 @@ void	make_words(char const *s, char **arr, size_t i, size_t j)
 		free_words;
 	a++;
 }
+
+void	free_words(char **arr, size_t index)
+{
+	while (index != 0)
+	{
+		free(arr[index - 1]);
+		index--;
+	}
+	free(arr);
+}
+
+int	main(void)
+{
+	char	str[] = "aaaaaHALLOaaaaHoia";
+
+	printf(
