@@ -6,11 +6,12 @@
 /*   By: sreerink <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/11/18 15:32:17 by sreerink      #+#    #+#                 */
-/*   Updated: 2022/11/20 21:27:59 by sreerink      ########   odam.nl         */
+/*   Updated: 2022/11/20 21:23:42 by sreerink      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include	"libft.h"
+#include	<stdio.h>
 
 size_t	count_words(char const *s, char c);
 void	length_words(char const *s, char **arr, char c, size_t max_words);
@@ -29,6 +30,18 @@ char	**ft_split(char const *s, char c)
 	if (!arr)
 		return (0);
 	length_words(s, arr, c, words);
+printf("%s\n", arr[0]);
+printf("%s\n", arr[1]);
+printf("%s\n", arr[2]);
+printf("%s\n", arr[3]);
+printf("%s\n", arr[4]);
+printf("%s\n", arr[5]);
+printf("%s\n", arr[6]);
+printf("%s\n", arr[7]);
+//printf("%s\n", arr[8]);
+//printf("%s\n", arr[9]);
+//printf("%s\n", arr[10]);
+//	printf("%s\n", arr[11]);
 	return (arr);
 }
 
@@ -94,7 +107,7 @@ void	make_words(char const *s, char **arr, size_t i, size_t j)
 
 	arr[a] = ft_substr(s, i, j - i);
 	if (!arr[a])
-		return (free_words(arr, a));
+		free_words(arr, a);
 	a++;
 }
 
@@ -106,4 +119,11 @@ void	free_words(char **arr, size_t index)
 		index--;
 	}
 	free(arr);
+}
+
+int	main(void)
+{
+	//char	str[] = "lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse";
+
+ft_split("          ", ' ');
 }
