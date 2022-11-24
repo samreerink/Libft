@@ -6,10 +6,11 @@
 /*   By: sreerink <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/11/18 15:32:17 by sreerink      #+#    #+#                 */
-/*   Updated: 2022/11/20 21:27:59 by sreerink      ########   odam.nl         */
+/*   Updated: 2022/11/24 17:01:28 by sreerink      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdio.h>
 #include	"libft.h"
 
 size_t	count_words(char const *s, char c);
@@ -94,7 +95,10 @@ void	make_words(char const *s, char **arr, size_t i, size_t j)
 
 	arr[a] = ft_substr(s, i, j - i);
 	if (!arr[a])
-		return (free_words(arr, a));
+	{
+		free_words(arr, a);
+		exit (0);
+	}
 	a++;
 }
 
