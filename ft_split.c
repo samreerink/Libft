@@ -6,17 +6,17 @@
 /*   By: sreerink <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/11/18 15:32:17 by sreerink      #+#    #+#                 */
-/*   Updated: 2022/11/24 17:01:28 by sreerink      ########   odam.nl         */
+/*   Updated: 2022/11/24 21:10:22 by sreerink      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
 #include	"libft.h"
+#include	<stdio.h>
 
-size_t	count_words(char const *s, char c);
-void	length_words(char const *s, char **arr, char c, size_t max_words);
-void	make_words(char const *s, char **arr, size_t i, size_t j);
-void	free_words(char **arr, size_t index);
+static size_t	count_words(char const *s, char c);
+static void		length_words(char const *s, char **arr, char c, size_t words);
+static void		make_words(char const *s, char **arr, size_t i, size_t j);
+static void		free_words(char **arr, size_t index);
 
 char	**ft_split(char const *s, char c)
 {
@@ -33,7 +33,7 @@ char	**ft_split(char const *s, char c)
 	return (arr);
 }
 
-size_t	count_words(char const *s, char c)
+static size_t	count_words(char const *s, char c)
 {
 	size_t	i;
 	size_t	j;
@@ -45,10 +45,8 @@ size_t	count_words(char const *s, char c)
 	while (s[i])
 	{
 		while (s[i] == c && s[i])
-		{
 			i++;
-			j++;
-		}
+		j = i;
 		while (s[j] != c && s[j])
 		{
 			j++;
@@ -62,47 +60,45 @@ size_t	count_words(char const *s, char c)
 	return (word);
 }
 
-void	length_words(char const *s, char **arr, char c, size_t max_words)
+static void	length_words(char const *s, char **arr, char c, size_t words)
 {
 	size_t	i;
 	size_t	j;
+	size_t	a;
 
 	i = 0;
 	j = 0;
-	while (s[i] && max_words > 0)
+	a = 0;
+	while (s[i] && words > 0)
 	{
 		while (s[i] == c && s[i])
-		{
 			i++;
-			j++;
-		}
+		j = i;
 		while (s[j] != c && s[j])
 		{
 			j++;
 			if (s[j] == c || !s[j])
 			{
-				make_words(s, arr, i, j);
-				max_words--;
+				make_words(s, arr, i, j, a);
+				a++;
+				words--;
 				i = j;
 			}
 		}
 	}
 }
 
-void	make_words(char const *s, char **arr, size_t i, size_t j)
+static void	make_words(char const *s, char **arr, size_t i, size_t j, size_t a)
 {
-	static size_t	a;
-
 	arr[a] = ft_substr(s, i, j - i);
 	if (!arr[a])
 	{
 		free_words(arr, a);
-		exit (0);
+		return (0);
 	}
-	a++;
 }
 
-void	free_words(char **arr, size_t index)
+static void	free_words(char **arr, size_t index)
 {
 	while (index != 0)
 	{
@@ -110,4 +106,14 @@ void	free_words(char **arr, size_t index)
 		index--;
 	}
 	free(arr);
+}
+
+
+int	main(void)
+{
+	char	**arr;
+
+	arr = ft_split("tripouille", 0);
+	printf("%s\n", arr[0]);
+	printf("%s\n", arr[1]);
 }

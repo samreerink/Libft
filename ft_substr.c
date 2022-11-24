@@ -6,14 +6,14 @@
 /*   By: sreerink <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/11/15 18:54:30 by sreerink      #+#    #+#                 */
-/*   Updated: 2022/11/24 16:17:23 by sreerink      ########   odam.nl         */
+/*   Updated: 2022/11/24 18:11:34 by sreerink      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 //#include	<stdio.h>
 #include	"libft.h"
 
-size_t	memory_size(char const *s, unsigned int start, size_t len)
+static size_t	memory_size(char const *s, unsigned int start, size_t len)
 {
 	size_t	i;
 
