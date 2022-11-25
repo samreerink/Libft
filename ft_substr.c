@@ -6,7 +6,7 @@
 /*   By: sreerink <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/11/15 18:54:30 by sreerink      #+#    #+#                 */
-/*   Updated: 2022/11/24 18:11:34 by sreerink      ########   odam.nl         */
+/*   Updated: 2022/11/25 21:12:58 by sreerink      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,13 +37,13 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	{
 		substr = (char *)ft_calloc(sizeof(char), 1);
 		if (!substr)
-			return (0);
+			return (NULL);
 		return (substr);
 	}
 	i = memory_size(s, start, len);
 	substr = (char *)ft_calloc(sizeof(char), i);
 	if (!substr)
-		return (0);
+		return (NULL);
 	i = 0;
 	while (i < len && s[start])
 	{
