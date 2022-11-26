@@ -6,7 +6,7 @@
 /*   By: sreerink <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/11/10 20:12:42 by sreerink      #+#    #+#                 */
-/*   Updated: 2022/11/26 18:49:55 by sreerink      ########   odam.nl         */
+/*   Updated: 2022/11/26 20:47:27 by sreerink      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,5 +83,7 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char*));
 char	**ft_split(char const *s, char c);
 
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len);
+
+char	*ft_itoa(int n);
 
 #endif

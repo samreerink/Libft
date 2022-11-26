@@ -6,13 +6,10 @@
 /*   By: sreerink <sreerink@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/22 16:46:26 by sreerink      #+#    #+#                 */
-/*   Updated: 2022/11/13 18:39:29 by sreerink      ########   odam.nl         */
+/*   Updated: 2022/11/26 21:46:56 by sreerink      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
-/*
-#include	<strings.h>
-#include	<stdio.h>
-*/
+
 #include	"libft.h"
 
 void	ft_bzero(void *s, size_t n)
@@ -28,14 +25,3 @@ void	ft_bzero(void *s, size_t n)
 		i++;
 	}
 }
-/*
-int	main(void)
-{
-	char	s1[20] = "Hallo";
-	char	s2[20] = "Hallo";
-
-	bzero(s1, 3);
-	ft_bzero(s2, 3);
-	printf("DIY: %s\n", s1);
-	printf("OG: %s\n", s2);
-}*/
