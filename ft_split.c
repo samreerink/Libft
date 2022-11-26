@@ -14,9 +14,9 @@
 
 static void	free_words(char **arr, size_t index)
 {
-	while (index >= 0)
+	while (index != 0)
 	{
-		free(arr[index]);
+		free(arr[index - 1]);
 		index--;
 	}
 	free(arr);
@@ -43,22 +43,23 @@ static size_t	count_words(char const *s, char c)
 	return (words);
 }
 
-static size_t length_words(const char *s, char c, size_t *i)
+static size_t	length_words(const char *s, char c, size_t *i)
 {
 	size_t	j;
 	size_t	i_save;
 
 	j = *i;
-	i_save = i;
+	i_save = *i;
 	while (s[j] != c)
 	{
 		j++;
 		if (s[j] == c || s[j] == '\0')
 		{
-			i = j;
+			*i = j;
 			return (j - i_save);
 		}
 	}
+	return (0);
 }
 
 static char	**make_words(const char *s, char **arr, char c)
@@ -74,16 +75,17 @@ static char	**make_words(const char *s, char **arr, char c)
 	{
 		while (s[i] == c && s[i])
 			i++;
-		if (s[i] != c)
+		if (s[i] != c && s[i])
 		{
 			start = i;
-			len = length_words(s, c, i);
-			ft_substr(arr[a], start, len);
+			len = length_words(s, c, &i);
+			arr[a] = ft_substr(s, start, len);
 			if (!arr[a])
 				return (free_words(arr, a), NULL);
 			a++;
 		}
 	}
+	return (arr);
 }
 
 char	**ft_split(char const *s, char c)
