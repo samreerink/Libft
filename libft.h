@@ -6,7 +6,7 @@
 /*   By: sreerink <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/11/10 20:12:42 by sreerink      #+#    #+#                 */
-/*   Updated: 2022/11/20 19:12:21 by sreerink      ########   odam.nl         */
+/*   Updated: 2022/11/26 18:49:55 by sreerink      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,5 +81,7 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 void	ft_striteri(char *s, void (*f)(unsigned int, char*));
 
 char	**ft_split(char const *s, char c);
+
+char	*ft_strnstr(const char *haystack, const char *needle, size_t len);
 
 #endif
