@@ -17,23 +17,31 @@ SRCS= 		ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c \
 			ft_strmapi.c ft_striteri.c ft_split.c ft_strnstr.c \
 			ft_itoa.c
 
+SRCS_BONUS=		ft_lstnew.c ft_lstadd_front.c ft_lstsize.c \
+			ft_lstlast.c ft_lstadd_back.c ft_lstdelone.c \
+			ft_lstclear.c
+
 OBJECT= 	$(SRCS:.c=.o)
 
+OBJECT_BONUS=	$(SRCS_BONUS:.c=.o)
 
 all:		$(NAME)
 
 $(NAME): 	$(OBJECT)
 			ar rcs $@ $^
 
+bonus:		$(NAME) $(OBJECT_BONUS)
+			ar rcs $< $(OBJECT_BONUS)
+
 %.o:		%.c $(HEADER)
 			$(CC) -c $(FLAGS) -o $@ $<
 
 clean:
-			$(RM) $(OBJECT)
+			$(RM) $(OBJECT) $(OBJECT_BONUS)
 
 fclean:		clean
 			$(RM) $(NAME)
 
 re:			fclean $(NAME)
 
-.PHONY:	all clean fclean re
+.PHONY:	all clean fclean re bonus
