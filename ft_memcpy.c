@@ -6,13 +6,10 @@
 /*   By: sreerink <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/13 18:50:41 by sreerink      #+#    #+#                 */
-/*   Updated: 2022/11/05 16:09:36 by sreerink      ########   odam.nl         */
+/*   Updated: 2022/11/28 22:32:04 by sreerink      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
-/*
-#include	<string.h>
-#include	<stdio.h>
-*/
+
 #include	"libft.h"
 
 void	*ft_memcpy(void *dst, const void *src, size_t n)
@@ -33,16 +30,3 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 	}
 	return (dst_caster);
 }
-/*
-int	main(void)
-{
-//	char	dst1[] = "";
-//	char	src1[] = "";
-	char	dst2[] = "";
-	char	src2[] = "";
-	int		n;
-
-	n = 4;
-	//printf("OG: %s\n", memcpy(dst1, src1, n));
-	printf("DIY: %s\n", ft_memcpy(dst2, src2, n));
-}*/

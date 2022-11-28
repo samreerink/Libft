@@ -6,13 +6,10 @@
 /*   By: sreerink <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/11/04 19:11:28 by sreerink      #+#    #+#                 */
-/*   Updated: 2022/11/10 20:11:18 by sreerink      ########   odam.nl         */
+/*   Updated: 2022/11/28 22:38:18 by sreerink      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
-/*
-#include	<string.h>
-#include	<stdio.h>
-*/
+
 #include	"libft.h"
 
 char	*ft_strrchr(const char *s, int c)
@@ -40,12 +37,3 @@ char	*ft_strrchr(const char *s, int c)
 	}
 	return (save_ch);
 }
-/*
-int	main(void)
-{
-	char	str1[] = "lahho!";
-	char	str2[] = "lahho!";
-
-	printf("OG: %s\n", strrchr(str1, '\0'));
-	printf("DIY: %s\n", ft_strrchr(str2, '\0'));
-}*/

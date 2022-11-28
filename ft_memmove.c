@@ -6,13 +6,10 @@
 /*   By: sreerink <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/13 20:13:35 by sreerink      #+#    #+#                 */
-/*   Updated: 2022/11/12 22:35:52 by sreerink      ########   odam.nl         */
+/*   Updated: 2022/11/28 22:33:28 by sreerink      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
-/*
-#include	<string.h>
-#include	<stdio.h>
-*/
+
 #include	"libft.h"
 
 void	*ft_memmove(void *dst, const void *src, size_t len)
@@ -41,18 +38,3 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 	}
 	return (caster_dst);
 }
-/*
-int	main(void)
-{
-	char	dst1[] = "12345678";
-	char	src1[] = "99999999";
-	char	dst2[] = "12345678";
-	char	src2[] = "99999999";
-	int		len;
-
-	len = 0;
-	memmove(dst1 + 2, dst1, len);
-	printf("OG: %s\n", dst1);
-	ft_memmove(dst2 + 2, dst2, len);
-	printf("DIY: %s\n", dst2);
-}*/
