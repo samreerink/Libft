@@ -10,7 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-//#include	<stdio.h>
 #include	"libft.h"
 
 char	*ft_strtrim(char const *s1, char const *set)
@@ -32,11 +31,3 @@ char	*ft_strtrim(char const *s1, char const *set)
 	str = ft_substr(s1, i, str_len);
 	return (str);
 }
-/*
-int	main(void)
-{
-	char	str[] = "       ";
-	char	set[] = " ";
-
-	printf("%s\n", ft_strtrim(str, set));
-}*/

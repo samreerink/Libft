@@ -10,7 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-//#include	<stdio.h>
 #include	"libft.h"
 
 static size_t	memory_size(char const *s, unsigned int start, size_t len)
@@ -53,10 +52,3 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	}
 	return (substr);
 }
-/*
-int	main(void)
-{
-	char	str[] = "";
-
-	printf("%s\n", ft_substr(str, 5, 20));
-}*/

@@ -10,8 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-//#include	<string.h>
-//#include	<stdio.h>
 #include	"libft.h"
 
 void	*ft_memchr(const void *s, int c, size_t n)
@@ -31,11 +29,3 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	}
 	return (0);
 }
-/*
-int	main(void)
-{
-	unsigned char	str1[] = "Hello!";
-	
-	printf("OG: %s\n", memchr(str1, 'l', 4));
-	printf("DIY: %s\n", ft_memchr(str1, 'l', 4));
-}*/

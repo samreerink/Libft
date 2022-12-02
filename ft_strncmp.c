@@ -9,9 +9,7 @@
 /*   Updated: 2022/11/29 18:02:07 by sreerink      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
-//
-//#include	<string.h>
-//#include	<stdio.h>
+
 #include	"libft.h"
 
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
@@ -30,12 +28,3 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 		i++;
 	return (str1[i] - str2[i]);
 }
-/*
-int	main(void)
-{
-	char	str1[] = "aaab";
-	char	str2[] = "aaaa";
-
-	printf("OG: %i\n", strncmp(str1, str2, 2));
-	printf("DIY: %i\n", ft_strncmp(str1, str2, 2));
-}*/
