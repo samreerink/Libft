@@ -6,7 +6,7 @@
 /*   By: sreerink <sreerink@student.codam.nl>        +#+                      */
 /*                                                  +#+                       */
 /*   Created: 2024/02/14 22:57:31 by sreerink      #+#    #+#                 */
-/*   Updated: 2024/02/15 01:27:29 by sreerink      ########   odam.nl         */
+/*   Updated: 2024/02/15 16:44:39 by sreerink      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,13 +19,13 @@ static void	afternwl_to_line(char **line, char **after_nwl)
 	*after_nwl = NULL;
 }
 
-static void	read_and_stack(char **line, int fd, ssize_t *chars_read, size_t buffer_size)
+static void	read_and_stack(char **line, int fd, ssize_t *chars_read)
 {
-	char	buffer[buffer_size + 1];
+	char	buffer[BUFFER_SIZE + 1];
 
 	while (ft_index_chr(*line, '\n') == -1)
 	{
-		*chars_read = read(fd, buffer, buffer_size);
+		*chars_read = read(fd, buffer, BUFFER_SIZE);
 		if ((*chars_read == -1) || (*chars_read == 0 && *line == NULL))
 		{
 			free(*line);
@@ -69,14 +69,14 @@ static void	make_line_and_afternwl(char **line, char **after_nwl, ssize_t pos)
 	*line = temp;
 }
 
-char	*get_next_line(int fd, size_t buffer_size)
+char	*get_next_line(int fd)
 {
 	ssize_t		chars_read;
 	ssize_t		pos;
 	char		*line;
 	static char	*after_nwl;
 
-	if (fd < 0 || buffer_size == 0)
+	if (fd < 0 || BUFFER_SIZE <= 0)
 		return (NULL);
 	line = NULL;
 	chars_read = 1;
@@ -86,7 +86,7 @@ char	*get_next_line(int fd, size_t buffer_size)
 		if (!line)
 			return (NULL);
 	}
-	read_and_stack(&line, fd, &chars_read, buffer_size);
+	read_and_stack(&line, fd, &chars_read);
 	if (!line)
 		return (free(after_nwl), NULL);
 	pos = ft_index_chr(line, '\n');

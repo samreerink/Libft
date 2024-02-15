@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   libft.h                                            :+:    :+:            */
+/*   libft.h                                           :+:    :+:             */
 /*                                                     +:+                    */
 /*   By: sreerink <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/11/10 20:12:42 by sreerink      #+#    #+#                 */
-/*   Updated: 2022/11/28 20:07:04 by sreerink      ########   odam.nl         */
+/*   Updated: 2024/02/15 16:42:17 by sreerink      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,10 @@
 # include <stddef.h>
 # include <stdlib.h>
 # include <unistd.h>
+
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 100
+# endif
 
 typedef struct s_list
 {
@@ -82,6 +86,10 @@ char	*ft_substr(char const *s, unsigned int start, size_t len);
 char	*ft_strjoin(char const *s1, char const *s2);
 
 char	*ft_strjoin_free(char *s1, char *s2);
+
+ssize_t	ft_index_chr(const char *str, char c);
+
+char	*get_next_line(int fd);
 
 char	*ft_strtrim(char const *s1, char const *set);
 
