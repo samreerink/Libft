@@ -1,24 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                       ::::::::             */
-/*   ft_lstadd_back.c                                  :+:    :+:             */
+/*   ft_free_array.c                                   :+:    :+:             */
 /*                                                    +:+                     */
 /*   By: sreerink <sreerink@student.codam.nl>        +#+                      */
 /*                                                  +#+                       */
-/*   Created: 2024/05/24 17:11:05 by sreerink      #+#    #+#                 */
-/*   Updated: 2024/05/24 17:17:00 by sreerink      ########   odam.nl         */
+/*   Created: 2024/05/24 16:54:54 by sreerink      #+#    #+#                 */
+/*   Updated: 2024/05/24 17:07:38 by sreerink      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstadd_back(t_list **lst, t_list *new)
+void	ft_free_array(char **array)
 {
-	if (new != NULL)
+	size_t	i;
+	size_t	j;
+
+	i = 0;
+	while (array[i])
 	{
-		if (*lst != NULL)
-			ft_lstlast(*lst)->next = new;
-		else
-			*lst = new;
+		free(array[i]);
+		array[i] = NULL;
+		i++;
 	}
+	free(array);
+	array = NULL;
 }

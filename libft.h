@@ -6,7 +6,7 @@
 /*   By: sreerink <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/11/10 20:12:42 by sreerink      #+#    #+#                 */
-/*   Updated: 2024/05/24 16:31:18 by sreerink      ########   odam.nl         */
+/*   Updated: 2024/05/24 17:08:27 by sreerink      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,6 +104,8 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len);
 char	*ft_itoa(int n);
 
 char	**ft_copy_array(char **src);
+
+void	ft_free_array(char **array);
 
 t_list	*ft_lstnew(void *content);
 

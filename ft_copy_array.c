@@ -6,7 +6,7 @@
 /*   By: sreerink <sreerink@student.codam.nl>        +#+                      */
 /*                                                  +#+                       */
 /*   Created: 2024/05/24 16:28:29 by sreerink      #+#    #+#                 */
-/*   Updated: 2024/05/24 16:29:27 by sreerink      ########   odam.nl         */
+/*   Updated: 2024/05/24 17:09:12 by sreerink      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ char	**ft_copy_array(char **src)
 		new_array[i] = ft_strdup(src[i]);
 		if (!new_array[i])
 		{
-			// ft_free_array(new_array);
+			ft_free_array(new_array);
 			return (NULL);
 		}
 		i++;
