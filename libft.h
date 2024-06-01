@@ -6,7 +6,7 @@
 /*   By: sreerink <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/11/10 20:12:42 by sreerink      #+#    #+#                 */
-/*   Updated: 2024/05/24 17:08:27 by sreerink      ########   odam.nl         */
+/*   Updated: 2024/06/01 02:06:52 by sreerink      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include <stddef.h>
 # include <stdlib.h>
 # include <unistd.h>
+# include <stdbool.h>
 
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 100
@@ -106,6 +107,8 @@ char	*ft_itoa(int n);
 char	**ft_copy_array(char **src);
 
 void	ft_free_array(char **array);
+
+bool	ft_check_end_str(char *str, char *to_check);
 
 t_list	*ft_lstnew(void *content);
 

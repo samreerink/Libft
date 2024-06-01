@@ -16,7 +16,8 @@ SRCS= 		ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c \
 			ft_strlcat.c ft_substr.c ft_strjoin.c ft_strtrim.c \
 			ft_strmapi.c ft_striteri.c ft_split.c ft_strnstr.c \
 			ft_itoa.c ft_strjoin_free.c ft_index_chr.c \
-			get_next_line.c ft_copy_array.c ft_free_array.c
+			get_next_line.c ft_copy_array.c ft_free_array.c \
+			ft_check_end_str.c
 
 SRCS_BONUS=		ft_lstnew.c ft_lstadd_front.c ft_lstsize.c \
 			ft_lstlast.c ft_lstadd_back.c ft_lstdelone.c \
